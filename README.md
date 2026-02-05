@@ -43,3 +43,4 @@ Geohazard Barrier & Broadcast System with ESP32 sensor + SOS nodes, a Vue + Ioni
 
 See `docs/DEPLOYMENT.md` for cPanel notes and `docs/ARCHITECTURE.md` for updated diagrams.
 For cPanel-to-Android end-to-end steps, see `CPANEL_ANDROID_GUIDE.md`.
+ 
