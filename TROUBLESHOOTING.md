@@ -124,3 +124,4 @@ If you see CORS errors in the browser console:
 5. Try accessing the API directly without the frontend to isolate the issue
 
 
+ 
