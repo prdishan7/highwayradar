@@ -36,3 +36,4 @@ This document shows **exact pin mapping**. Only analog outputs are used for soil
 
 ## Grounding
 - All sensor GNDs must connect to ESP32 GND (common ground)
+ 
