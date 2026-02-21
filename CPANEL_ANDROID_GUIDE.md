@@ -57,3 +57,4 @@ This will:
 - Run again: `npm run android`
 - Confirm backend endpoint works directly over HTTPS
 - Check server logs in cPanel (`Errors`)
+ 
