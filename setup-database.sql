@@ -70,4 +70,4 @@ CREATE TABLE IF NOT EXISTS audit_log (
 
 -- Default admin user will be auto-seeded by the API on first request
 -- Email: admin@gmail.com
--- Password: admin123
+-- Password: admin123 
