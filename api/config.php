@@ -18,3 +18,4 @@ return [
     'firebase_db_url' => getenv('HG_FIREBASE_DB_URL') ?: 'https://highway-123e3-default-rtdb.asia-southeast1.firebasedatabase.app/',
     'fcm_server_key' => getenv('HG_FCM_SERVER_KEY') ?: 'YOUR_FCM_SERVER_KEY_HERE',
 ];
+ 
