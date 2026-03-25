@@ -39,3 +39,4 @@ flowchart LR
 - cPanel-friendly PHP 8 + MySQL hosting for `/api`.
 - RTDB used only for ESP32 writes and app reads (`live/sensor`, `alerts/sos`).
 - Vue/Ionic app served from any CDN or via Capacitor Android bundle.
+ 
