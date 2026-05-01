@@ -1,0 +1,10 @@
+{
+  "appId": "com.hdrms.app",
+  "appName": "highway gbbs",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "url": "https://gbbshighway.xo.je",
+    "cleartext": false
+  }
+}

@@ -1,0 +1,41 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node / Vite / Ionic
+app/node_modules/
+app/dist/
+app/.vite/
+
+# Android / Capacitor build artifacts
+app/android/.gradle/
+app/android/build/
+app/android/app/build/
+app/android/local.properties
+app/android/capacitor-cordova-android-plugins/build/
+
+# Release outputs and signing material
+build-output/
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# Local databases and archives
+api/data/*.sqlite
+api/data/*.db
+*.zip
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

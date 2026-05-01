@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "live": {
+      "sensor": {
+        ".read": true,
+        ".write": true
+      }
+    },
+    "alerts": {
+      "sos": {
+        ".read": true,
+        ".write": true
+      }
+    }
+  }
+}

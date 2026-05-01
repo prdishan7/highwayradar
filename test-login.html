@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .test { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background: #d4edda; border-color: #c3e6cb; }
+        .error { background: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        input { width: 100%; padding: 8px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Test Login Endpoint</h1>
+    
+    <div class="test">
+        <h3>Direct API Test (localhost/highway/api)</h3>
+        <input type="email" id="email1" placeholder="Email" value="admin@gmail.com">
+        <input type="password" id="pass1" placeholder="Password" value="admin123">
+        <button onclick="testDirect()">Test Direct API</button>
+        <pre id="direct-result">Click button to test...</pre>
+    </div>
+    
+    <div class="test">
+        <h3>Via Proxy Test (localhost:5173/api)</h3>
+        <p>Make sure Vite dev server is running!</p>
+        <input type="email" id="email2" placeholder="Email" value="admin@gmail.com">
+        <input type="password" id="pass2" placeholder="Password" value="admin123">
+        <button onclick="testProxy()">Test Via Proxy</button>
+        <pre id="proxy-result">Click button to test...</pre>
+    </div>
+
+    <script>
+        async function testDirect() {
+            const result = document.getElementById('direct-result');
+            const email = document.getElementById('email1').value;
+            const pass = document.getElementById('pass1').value;
+            
+            result.textContent = 'Testing...';
+            try {
+                const res = await fetch('http://localhost/highway/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password: pass })
+                });
+                const data = await res.json();
+                result.textContent = `Status: ${res.status}\n\n${JSON.stringify(data, null, 2)}`;
+                result.parentElement.className = res.ok ? 'test success' : 'test error';
+            } catch (e) {
+                result.textContent = 'Error: ' + e.message;
+                result.parentElement.className = 'test error';
+            }
+        }
+
+        async function testProxy() {
+            const result = document.getElementById('proxy-result');
+            const email = document.getElementById('email2').value;
+            const pass = document.getElementById('pass2').value;
+            
+            result.textContent = 'Testing...';
+            try {
+                const res = await fetch('http://localhost:5173/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password: pass })
+                });
+                const data = await res.json();
+                result.textContent = `Status: ${res.status}\n\n${JSON.stringify(data, null, 2)}`;
+                result.parentElement.className = res.ok ? 'test success' : 'test error';
+            } catch (e) {
+                result.textContent = 'Error: ' + e.message + '\n\nMake sure Vite dev server is running on port 5173!';
+                result.parentElement.className = 'test error';
+            }
+        }
+    </script>
+</body>
+</html>
+
+
